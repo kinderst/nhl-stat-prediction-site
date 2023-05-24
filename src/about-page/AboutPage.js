@@ -30,8 +30,11 @@ const AboutPage = props => {
                 be done to this, even though the results are already good. For example, training individual
                 models to predict a single variable, or other feature transforms and data manipulation
                 techniques, as well as much more hyperparameter tuning, are just some of the things that
-                come to mind that would only further improve results. You can find the code used to train
-                the model in the GitHub repo below
+                come to mind that would only further improve results. It should also be noted that many
+                of the examples shown were also in the training set (but not all!), and for a full list
+                of which players were not used in the training set (to get a better sense of model
+                generalizability to unseen data), see the GitHub and the train/val/test accuracy splits.
+                You can find the code used to train the model in the GitHub repo below.
             </p>
             <p>
                 This website was created by Scott Kinder, you can find my

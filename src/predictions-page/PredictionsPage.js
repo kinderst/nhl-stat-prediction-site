@@ -27,10 +27,10 @@ const PredictionsPage = props => {
     // const [options, setOptions] = useState(initialOptions);
     // const [data, setData] = useState(initialData);
 
-    const [inputPlayerName, setInputPlayerName] = useState('');
-    const [inputColumnSelected, setInputColumnSelected] = useState('icetime');
+    const [inputPlayerName, setInputPlayerName] = useState('Nathan MacKinnon');
+    const [inputColumnSelected, setInputColumnSelected] = useState('I_F_primaryAssists');
 
-    const [playerSelectedId, setPlayerSelectedId] = useState(null);
+    const [playerSelectedId, setPlayerSelectedId] = useState('8477492');
 
 
     return (
