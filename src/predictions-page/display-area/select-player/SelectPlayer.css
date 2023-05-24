@@ -1,0 +1,7 @@
+.select-player-row {
+    box-shadow: inset 4px 0px 1px 0px rgba(86, 86, 86, 0.75);
+}
+
+.select-player-row:hover {
+    background-color: rgba(50,50,50,0.75);
+}
