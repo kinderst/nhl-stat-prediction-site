@@ -31,7 +31,7 @@ export const fetchData = async (playerId, setData, setOptions, showDataByIceHour
             //setDocumentData(docSnapshot.data());
             const docData = docSnapshot.data();
             const actualData = [];
-            const predData = [null]; //pred starts with a 0, we cant predict until we have a timestep!
+            let predData = [null]; //pred starts with a 0, we cant predict until we have a timestep!
 
             const yearsToShow = []
             for (const key in docData['actual']) {
@@ -67,6 +67,14 @@ export const fetchData = async (playerId, setData, setOptions, showDataByIceHour
                     predData.push(null);
                 }
             }
+            if (colIndex === 0) {
+                predData = []
+                for (let i = 0; i < actualData.length; i++) {
+                    //10 hours
+                    const amountHours = showDataByIceHour ? (10) : (60*60*10)
+                    predData.push(amountHours)
+                }
+            }
             actualData.push(null);
             yearsToShow.push(String(parseInt(yearsToShow[yearsToShow.length - 1]) + 1));
             const graphTitle = playerName + ' ' + columnSelected;
@@ -85,6 +93,7 @@ export const fetchData = async (playerId, setData, setOptions, showDataByIceHour
             };
             setOptions(updatedOptions);
 
+            const predLabel = colIndex === 0 ? "Minimum Icetime For Prediction" : "Predicted";
             const updatedData = {
                 labels: yearsToShow,
                 datasets: [
@@ -95,7 +104,7 @@ export const fetchData = async (playerId, setData, setOptions, showDataByIceHour
                         backgroundColor: 'rgba(255, 99, 132, 0.5)',
                     },
                     {
-                        label: 'Predicted',
+                        label: predLabel,
                         data: predData,
                         borderColor: 'rgb(53, 162, 235)',
                         backgroundColor: 'rgba(53, 162, 235, 0.5)',
