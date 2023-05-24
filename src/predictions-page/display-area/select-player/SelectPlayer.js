@@ -4,7 +4,7 @@ import SelectPlayerItem from "./SelectPlayerItem";
 import players from '../../players.json'
 
 const SelectPlayer = props => {
-    const playerItems = [];
+    let playerItems = [];
     if (props.inputPlayerName.length > 3) {
         for (const playerId in players) {
             const player = players[playerId];
@@ -12,6 +12,7 @@ const SelectPlayer = props => {
                 playerItems.push(
                     <SelectPlayerItem
                         id={playerId}
+                        birthday={player.birthDate}
                         name={player.name}
                         position={player.position}
                         team={player.team}
@@ -20,11 +21,27 @@ const SelectPlayer = props => {
                     />
                 );
             }
-            if (playerItems.length > 5) {
+            if (playerItems.length > 30) {
                 break
             }
         }
     }
+    playerItems.sort((a, b) => {
+        const propertyA = a.props.birthday;
+        const propertyB = b.props.birthday;
+
+        if (propertyA > propertyB) {
+            return -1;
+        }
+
+        if (propertyA < propertyB) {
+            return 1;
+        }
+
+        return 0;
+    });
+    playerItems = playerItems.splice(0,5);
+    console.log(playerItems)
 
     //const playerItems = null;
     return (
