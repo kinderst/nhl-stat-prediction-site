@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/nhl-stat-prediction-site/static/css/main.c744bc39.css",
+    "main.js": "/nhl-stat-prediction-site/static/js/main.f0c9bc30.js",
+    "static/js/787.c8dd4336.chunk.js": "/nhl-stat-prediction-site/static/js/787.c8dd4336.chunk.js",
+    "index.html": "/nhl-stat-prediction-site/index.html",
+    "main.c744bc39.css.map": "/nhl-stat-prediction-site/static/css/main.c744bc39.css.map",
+    "main.f0c9bc30.js.map": "/nhl-stat-prediction-site/static/js/main.f0c9bc30.js.map",
+    "787.c8dd4336.chunk.js.map": "/nhl-stat-prediction-site/static/js/787.c8dd4336.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c744bc39.css",
+    "static/js/main.f0c9bc30.js"
+  ]
+}
